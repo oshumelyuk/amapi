@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Practices.TransientFaultHandling;
 
 namespace Amapi.Web.Controllers
 {
@@ -10,36 +12,41 @@ namespace Amapi.Web.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private Repository repo { get; set; }
+
+        public ValuesController(IConfiguration conf)
+        {
+            Guard.ArgumentNotNull(conf, nameof(conf));
+            repo = Repository.GetInstance(conf);
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return await repo.ListAsync();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<string> Get(string value)
         {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
+            var createdTime = await repo.SearchAsync(value);
+            return createdTime.HasValue ? createdTime.Value.ToLocalTime().ToString("yyyy-mm-dd HH:MM") : "Never";
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task Put(string value)
         {
+            await repo.PutAsync(value);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(string value)
         {
+            await repo.DeleteAsync(value);
         }
     }
 }

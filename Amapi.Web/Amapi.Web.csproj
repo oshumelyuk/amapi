@@ -11,6 +11,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="NEST" Version="6.5.0" />
+    <PackageReference Include="TransientFaultHandling.Core" Version="5.1.1209.1" />
   </ItemGroup>
 
 </Project>
