@@ -24,28 +24,38 @@ namespace Amapi.Web.Controllers
         [HttpGet]
         public async Task<IEnumerable<string>> Get()
         {
+            Guard.ArgumentNotNull(repo, nameof(repo));
             return await repo.ListAsync();
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
+        [HttpGet("{value}")]
         public async Task<string> Get(string value)
         {
+            Guard.ArgumentNotNull(repo, nameof(repo));
+            Guard.ArgumentNotNullOrEmptyString(value, nameof(value));
+
             var createdTime = await repo.SearchAsync(value);
             return createdTime.HasValue ? createdTime.Value.ToLocalTime().ToString("yyyy-mm-dd HH:MM") : "Never";
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
+        [HttpPut("{value}")]
         public async Task Put(string value)
         {
+            Guard.ArgumentNotNull(repo, nameof(repo));
+            Guard.ArgumentNotNullOrEmptyString(value, nameof(value));
+
             await repo.PutAsync(value);
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{value}")]
         public async Task Delete(string value)
         {
+            Guard.ArgumentNotNull(repo, nameof(repo));
+            Guard.ArgumentNotNullOrEmptyString(value, nameof(value));
+
             await repo.DeleteAsync(value);
         }
     }
