@@ -9,10 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EnterpriseLibrary.Common" Version="6.0.1304" />
+    <PackageReference Include="EnterpriseLibrary.TransientFaultHandling.NetCore" Version="6.0.1312" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="NEST" Version="6.5.0" />
-    <PackageReference Include="TransientFaultHandling.Core" Version="5.1.1209.1" />
   </ItemGroup>
 
 </Project>

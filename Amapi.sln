@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amapi.Web", "Amapi.Web\Amapi.Web.csproj", "{0DA62000-9D80-417B-9739-074F1ACCAE11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amapi.Web", "Amapi.Web\Amapi.Web.csproj", "{0DA62000-9D80-417B-9739-074F1ACCAE11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsHelloWorldMail", "AwsHelloWorldMail\AwsHelloWorldMail.csproj", "{9D186253-F541-4869-840A-69F15804A8AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsHelloWorldTest", "AwsHelloWorldTest\AwsHelloWorldTest.csproj", "{82EA067F-BD79-498A-9817-38896044E7F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0DA62000-9D80-417B-9739-074F1ACCAE11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DA62000-9D80-417B-9739-074F1ACCAE11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DA62000-9D80-417B-9739-074F1ACCAE11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D186253-F541-4869-840A-69F15804A8AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D186253-F541-4869-840A-69F15804A8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D186253-F541-4869-840A-69F15804A8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D186253-F541-4869-840A-69F15804A8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82EA067F-BD79-498A-9817-38896044E7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82EA067F-BD79-498A-9817-38896044E7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82EA067F-BD79-498A-9817-38896044E7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82EA067F-BD79-498A-9817-38896044E7F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

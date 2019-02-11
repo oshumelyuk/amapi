@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Practices.TransientFaultHandling;
+using Microsoft.Practices.EnterpriseLibrary.Common.Utility;
 
 namespace Amapi.Web.Controllers
 {
@@ -33,7 +33,7 @@ namespace Amapi.Web.Controllers
         public async Task<string> Get(string value)
         {
             Guard.ArgumentNotNull(repo, nameof(repo));
-            Guard.ArgumentNotNullOrEmptyString(value, nameof(value));
+            Guard.ArgumentNotNullOrEmpty(value, nameof(value));
 
             var createdTime = await repo.SearchAsync(value);
             return createdTime.HasValue ? createdTime.Value.ToLocalTime().ToString("yyyy-mm-dd HH:MM") : "Never";
@@ -44,7 +44,7 @@ namespace Amapi.Web.Controllers
         public async Task Put(string value)
         {
             Guard.ArgumentNotNull(repo, nameof(repo));
-            Guard.ArgumentNotNullOrEmptyString(value, nameof(value));
+            Guard.ArgumentNotNullOrEmpty(value, nameof(value));
 
             await repo.PutAsync(value);
         }
@@ -54,7 +54,7 @@ namespace Amapi.Web.Controllers
         public async Task Delete(string value)
         {
             Guard.ArgumentNotNull(repo, nameof(repo));
-            Guard.ArgumentNotNullOrEmptyString(value, nameof(value));
+            Guard.ArgumentNotNullOrEmpty(value, nameof(value));
 
             await repo.DeleteAsync(value);
         }
