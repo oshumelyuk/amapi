@@ -16,8 +16,8 @@ namespace AwsHelloWorldMail
         {
             try
             {
-                var awsAccessKeyId = "AKIAIDGJMLHYWVGBT7OA";
-                var awsSecretAccessKey = "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";
+                var awsAccessKeyId = "";
+                var awsSecretAccessKey = "";
                 var client = new AmazonSimpleEmailServiceClient(awsAccessKeyId, awsSecretAccessKey, RegionEndpoint.USEast1);
 
                 var source = "o.shumeliuk@levi9.com";
