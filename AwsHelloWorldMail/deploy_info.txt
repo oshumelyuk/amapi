@@ -1,0 +1,2 @@
+install lambda tools: dotnet tool install --global Amazon.Lambda.Tools --version 3.1.2 (in Nuget cmd)
+package: dotnet lambda package -c Release -o ../HelloWorldLambda.zip -f netcoreapp2.1
